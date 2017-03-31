@@ -1,0 +1,3 @@
+Main-Class: view.Main
+Class-Path: assets/lib/javax.mail-1.5.6.jar assets/lib/nimrodlf-1.2.jar assets/lib/jNotifyOSD.jar
+
