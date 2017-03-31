@@ -25,7 +25,7 @@ Some features:
     <li>Multiplatform, thanks to java.</li>
 </ul>
 
-<img src="./Screenshot.png"></img>
+<img src="https://github.com/adbenitez/MailCopier/blob/master/Screenshot.png"></img>
 
 Notifications are from de api <a href="https://github.com/adbenitez/jNotifyOSD">jNotifyOSD</a>.
 Icons are from <a href="https://github.com/Nitrux/ardis-icon-theme">Ardis (icon theme)</a>
