@@ -28,11 +28,11 @@ Some features:
 Screenshot: <br/>
 <img src="https://github.com/adbenitez/MailCopier/blob/master/Screenshot.png"></img>
 
-Notifications are from de api <a href="https://github.com/adbenitez/jNotifyOSD">jNotifyOSD</a>. <br/>
-Icons are from <a href="https://github.com/Nitrux/ardis-icon-theme">Ardis (icon theme)</a> <br/>
+Notifications are from <a href="https://github.com/adbenitez/jNotifyOSD">jNotifyOSD</a> API.<br/>
+Icons are from <a href="https://github.com/Nitrux/ardis-icon-theme">Ardis (icon theme)</a><br/>
 Look and Feel: NimROD Look&Feel. 
 
-Note:
+Note: <br/>
 I have only tested the receive part of the program
 with IMAP protocol, but a friend have used it with POP3
 and say that it works like a charm. <br/>

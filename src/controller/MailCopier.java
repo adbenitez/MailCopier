@@ -48,6 +48,8 @@ import javax.mail.search.SubjectTerm;
 import com.sun.mail.smtp.SMTPTransport;
 import com.sun.net.ssl.internal.ssl.Provider;
 
+import controller.event.CopierListener;
+
 public class MailCopier {
     
     //	================= ATTRIBUTES ==============================

@@ -40,10 +40,10 @@ import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.filechooser.FileFilter;
 
-import controller.CopierListener;
 import controller.MailCopier;
 import adbenitez.notify.core.Notification;
 import controller.PManager;
+import controller.event.CopierAdapter;
 
 public class SendForm extends JFrame {
 
@@ -242,7 +242,7 @@ public class SendForm extends JFrame {
             clear_butt = new JButton(pManager.get_String("clear"));
             Dimension d = clear_butt.getPreferredSize();
             clear_butt.setMaximumSize(new Dimension((int)Short.MAX_VALUE, (int)d.getHeight()));
-            mailCopier.addCopierListener(new CopierListener() {
+            mailCopier.addCopierListener(new CopierAdapter() {
                     public void filesListChanged(LinkedList<String> files) {
                         if(files.size() > 0) {
                             clear_butt.setEnabled(true);
@@ -269,7 +269,7 @@ public class SendForm extends JFrame {
             send_butt.setEnabled(false);
             Dimension d = send_butt.getPreferredSize();
             send_butt.setMaximumSize(new Dimension((int)Short.MAX_VALUE, (int)d.getHeight()));
-            mailCopier.addCopierListener(new CopierListener() {
+            mailCopier.addCopierListener(new CopierAdapter() {
                     public void filesListChanged(LinkedList<String> files) {
                         if(files.size() > 0) {
                             send_butt.setEnabled(true);
@@ -349,7 +349,7 @@ public class SendForm extends JFrame {
         if (progressBar == null) {
             progressBar = new JProgressBar(0,0);
             progressBar.setStringPainted(true);
-            mailCopier.addCopierListener(new CopierListener() {
+            mailCopier.addCopierListener(new CopierAdapter() {
                     @Override
                     public void sendProgressChanged(int progress) {
                         progressBar.setValue(progress);
@@ -409,7 +409,7 @@ public class SendForm extends JFrame {
                         }
                     }  
                 });
-            mailCopier.addCopierListener(new CopierListener() {
+            mailCopier.addCopierListener(new CopierAdapter() {
                     public void filesListChanged(LinkedList<String> files) {
                         filesList.setListData(files.toArray(new String[files.size()]));
                     }

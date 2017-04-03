@@ -232,6 +232,13 @@ public class NimRODThemeManager {
         return new JPanel().createImage(new MemoryImageSource(img.getWidth(null), img.getHeight(null), pixels, 0, img.getWidth(null)));
     }
     
+    public static NimRODThemeManager getInstance() {
+        if (tManager == null) {
+            tManager = new NimRODThemeManager();
+        }
+        return tManager;
+    }
+    
     //	====================== END METHODS ========================
 
     //	=================== CLASSES ===============================
@@ -250,13 +257,6 @@ public class NimRODThemeManager {
                 return false;
         }
     } 
-
-    public static NimRODThemeManager getInstance() {
-        if (tManager == null) {
-            tManager = new NimRODThemeManager();
-        }
-        return tManager;
-    }
     
     //	====================== END CLASSES ===========================
 }

@@ -40,10 +40,10 @@ import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.filechooser.FileFilter;
 
-import controller.CopierListener;
 import controller.MailCopier;
 import adbenitez.notify.core.Notification;
 import controller.PManager;
+import controller.event.CopierAdapter;
 
 public class ReceiveForm extends JFrame {
 
@@ -300,7 +300,7 @@ public class ReceiveForm extends JFrame {
             clear_butt = new JButton(pManager.get_String("clear"));
             Dimension d = clear_butt.getPreferredSize();
             clear_butt.setMaximumSize(new Dimension((int)Short.MAX_VALUE, (int)d.getHeight()));
-            mailCopier.addCopierListener(new CopierListener() {
+            mailCopier.addCopierListener(new CopierAdapter() {
                     public void messagesListChanged(LinkedList<String> messages) {
                         if(messages.size() > 0) {
                             clear_butt.setEnabled(true);
@@ -334,7 +334,7 @@ public class ReceiveForm extends JFrame {
             receive_butt.setEnabled(false);
             Dimension d = receive_butt.getPreferredSize();
             receive_butt.setMaximumSize(new Dimension((int)Short.MAX_VALUE, (int)d.getHeight()));
-            mailCopier.addCopierListener(new CopierListener() {
+            mailCopier.addCopierListener(new CopierAdapter() {
                     public void messagesListChanged(LinkedList<String> messages) {
                         if(messages.size() > 0) {
                             receive_butt.setEnabled(true);
@@ -418,7 +418,7 @@ public class ReceiveForm extends JFrame {
         if (progressBar == null) {
             progressBar = new JProgressBar(0,0);
             progressBar.setStringPainted(true);
-            mailCopier.addCopierListener(new CopierListener() {
+            mailCopier.addCopierListener(new CopierAdapter() {
                     @Override
                     public void receiveProgressChanged(int progress) {
                         progressBar.setValue(progress);
@@ -477,7 +477,7 @@ public class ReceiveForm extends JFrame {
                         }
                     }
                 });
-            mailCopier.addCopierListener(new CopierListener() {
+            mailCopier.addCopierListener(new CopierAdapter() {
                     public void messagesListChanged(LinkedList<String> messages) {
                         messagesList.setListData(messages.toArray(new String[messages.size()]));
                     }
